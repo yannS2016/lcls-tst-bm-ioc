@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{D94A7A01-C6F8-4683-920E-8AB7F40D80EB}" Name="TestIOC" PrjFilePath="..\..\TestIOC\TestIOC.plcproj" TmcFilePath="..\..\TestIOC\TestIOC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{FA9B6B37-4EB2-FFC0-4DFF-5941F109EE39}" TmcPath="TestIOC\TestIOC.tmc">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{E4F8498A-5715-13ED-2615-EB4DE969DBAE}" TmcPath="TestIOC\TestIOC.tmc">
 			<Name>TestIOC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">

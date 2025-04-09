@@ -3,21 +3,21 @@
   <POU Name="Main" Id="{72a901fa-9a97-4d81-8b01-730815a6ff9d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
-    {attribute 'pytmc' := 'pv: @(PREFIX):M1'}
+    {attribute 'pytmc' := 'pv: @(PREFIX)M1'}
     M1: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX):M2'}
+    {attribute 'pytmc' := 'pv: @(PREFIX)M2'}
     M2: ST_MotionStage;
 
     fbMotion1: FB_MotionStageSim;
     fbMotion2: FB_MotionStageSim;
 
     {attribute 'pytmc' :='
-        pv: @(PREFIX):INCR
+        pv: @(PREFIX)INCR
         io: i
     '}
     stIncr: ST_PytmcTypes;
     {attribute 'pytmc' :='
-        pv: @(PREFIX):SET
+        pv: @(PREFIX)SET
         io: io
     '}
     stSet: ST_PytmcTypes;
