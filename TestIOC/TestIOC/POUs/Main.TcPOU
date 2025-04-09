@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
   <POU Name="Main" Id="{72a901fa-9a97-4d81-8b01-730815a6ff9d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -91,11 +91,15 @@ IF timer.Q THEN
     END_IF
 
     // Array, copy value to next and add one in first slot
-    FOR idx := 98 TO 0 BY -1 DO
-        stIncr.arrInt[idx + 1] := stIncr.arrInt[idx];
+    FOR idx := 0 TO 98 DO
+        stIncr.arrInt[99 - idx] := stIncr.arrInt[98 - idx];
     END_FOR
     stIncr.arrInt[0] := stIncr.arrInt[0] + 1;
 END_IF]]></ST>
     </Implementation>
+    <LineIds Name="Main">
+      <LineId Id="3" Count="65" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
