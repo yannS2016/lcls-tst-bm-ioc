@@ -15,6 +15,10 @@
     <Implicit_KindOfTask>{cb667eda-d9e8-434f-aaf0-310379a21af5}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{3320e3ce-22a1-427e-9292-34982a5730c6}</Implicit_Jitter_Distribution>
     <LibraryReferences>{0c04d3ce-bce3-43cd-af89-401eef5bf8d6}</LibraryReferences>
+    <Released>false</Released>
+    <AllowChecksForLibrary>false</AllowChecksForLibrary>
+    <POUsForPropertyAccessIncluded>false</POUsForPropertyAccessIncluded>
+    <GlobalVersionStructureIncluded>false</GlobalVersionStructureIncluded>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DUTs\ENUM_Test.TcDUT">
