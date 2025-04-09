@@ -7,7 +7,9 @@ from .devices import AllPVs
 
 @pytest.mark.fixture(scope="session")
 def all_pvs():
-    return AllPVs()
+    pvs = AllPVs()
+    pvs.wait_for_connection()
+    return pvs
 
 
 @pytest.mark.fixture(scope="session")
