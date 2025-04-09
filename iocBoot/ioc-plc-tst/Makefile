@@ -5,7 +5,7 @@ IOC_INSTANCE_PATH := $(shell pwd)
 PRODUCTION_IOC := 0
 
 PROJECT_NAME = lcls-plc-tst-ioc
-PROJECT_PATH := ../../lcls-plc-tst-ioc/lcls-plc-tst-ioc.tsproj
+PROJECT_PATH := ../../TestIOC/TestIOC.tsproj
 PLC = TestIOC
 
 PYTMC_OPTS :=
