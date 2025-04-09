@@ -4,8 +4,8 @@
 #         Project: TestIOC.tsproj
 #        PLC name: TestIOC (TestIOC Instance)
 # Generated using: pytmc 2.17.0
-# Project version: d8a3773
-#    Project hash: d8a377371971252daf4ea9b797e8644cefdc171b
+# Project version: efc55e5
+#    Project hash: efc55e5cc89c093d1e1cfbb5b66e0e168bbca8e5
 #     PLC IP/host: 172.21.148.160
 #      PLC Net ID: 172.21.148.160.1.1
 # ** DEVELOPMENT MODE IOC **
@@ -109,7 +109,7 @@ asynSetTraceInfoMask("$(ASYN_PORT)", -1, 5)
 #define AMPLIFIER_ON_FLAG_USING_CNEN   4
 
 epicsEnvSet("AXIS_NO",         "1")
-epicsEnvSet("MOTOR_PREFIX",    "$PREFIX:")
+epicsEnvSet("MOTOR_PREFIX",    "$(PREFIX):")
 epicsEnvSet("MOTOR_NAME",      "M1")
 epicsEnvSet("DESC",            "Main.M1 / Axis 1")
 epicsEnvSet("EGU",             "mm")
@@ -124,7 +124,7 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 epicsEnvSet("AXIS_NO",         "2")
-epicsEnvSet("MOTOR_PREFIX",    "$PREFIX:")
+epicsEnvSet("MOTOR_PREFIX",    "$(PREFIX):")
 epicsEnvSet("MOTOR_NAME",      "M2")
 epicsEnvSet("DESC",            "Main.M2 / Axis 2")
 epicsEnvSet("EGU",             "mm")
@@ -147,7 +147,7 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TST:IOC,IDX=1,TASK_PORT=350")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:TST:IOC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TST:IOC,PROJECT=TestIOC.tsproj,HASH=d8a3773,VERSION=d8a3773,PYTMC=2.17.0,PLC_HOST=172.21.148.160")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TST:IOC,PROJECT=TestIOC.tsproj,HASH=efc55e5,VERSION=efc55e5,PYTMC=2.17.0,PLC_HOST=172.21.148.160")
 
 #   lcls-twincat-motion: * (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=lcls-twincat-motion,VERSION=*,VENDOR=SLAC")

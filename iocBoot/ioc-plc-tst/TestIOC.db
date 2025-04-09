@@ -112,7 +112,7 @@ record(longin, "$(PREFIX)DB:LAST_REFRESH_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M1:PLC:bError_RBV") {
+record(bi, "$(PREFIX):M1:PLC:bError_RBV") {
   field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -126,7 +126,7 @@ record(bi, "$PREFIX:M1:PLC:bError_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M1:PLC:bHardwareEnable_RBV") {
+record(bi, "$(PREFIX):M1:PLC:bHardwareEnable_RBV") {
   field(DESC, "TRUE if STO not hit")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -140,7 +140,7 @@ record(bi, "$PREFIX:M1:PLC:bHardwareEnable_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M1:PLC:bHomeCmd_RBV") {
+record(bi, "$(PREFIX):M1:PLC:bHomeCmd_RBV") {
   field(DESC, "Start the homing routine")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -154,7 +154,7 @@ record(bi, "$PREFIX:M1:PLC:bHomeCmd_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bo, "$PREFIX:M1:PLC:bHomeCmd") {
+record(bo, "$(PREFIX):M1:PLC:bHomeCmd") {
   field(DESC, "Start the homing routine")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -165,7 +165,7 @@ record(bo, "$PREFIX:M1:PLC:bHomeCmd") {
   info(archive, "VAL")
 }
 
-record(bi, "$PREFIX:M1:PLC:bReset_RBV") {
+record(bi, "$(PREFIX):M1:PLC:bReset_RBV") {
   field(DESC, "Used internally to reset errors")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -179,7 +179,7 @@ record(bi, "$PREFIX:M1:PLC:bReset_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bo, "$PREFIX:M1:PLC:bReset") {
+record(bo, "$(PREFIX):M1:PLC:bReset") {
   field(DESC, "Used internally to reset errors")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -190,7 +190,7 @@ record(bo, "$PREFIX:M1:PLC:bReset") {
   info(archive, "VAL")
 }
 
-record(bi, "$PREFIX:M1:PLC:bUserEnable_RBV") {
+record(bi, "$(PREFIX):M1:PLC:bUserEnable_RBV") {
   # Used to disable power entirely for an axis
   field(DESC, "Used to disable powe...irely for an axis")
   field(SCAN, "I/O Intr")
@@ -205,7 +205,7 @@ record(bi, "$PREFIX:M1:PLC:bUserEnable_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bo, "$PREFIX:M1:PLC:bUserEnable") {
+record(bo, "$(PREFIX):M1:PLC:bUserEnable") {
   # Used to disable power entirely for an axis
   field(DESC, "Used to disable powe...irely for an axis")
   field(DTYP, "asynInt32")
@@ -217,7 +217,7 @@ record(bo, "$PREFIX:M1:PLC:bUserEnable") {
   info(archive, "VAL")
 }
 
-record(ai, "$PREFIX:M1:PLC:fHomePosition_RBV") {
+record(ai, "$(PREFIX):M1:PLC:fHomePosition_RBV") {
   # Used internally and by the IOC to pick home position
   field(DESC, "Used internally and ...ick home position")
   field(SCAN, "I/O Intr")
@@ -231,7 +231,7 @@ record(ai, "$PREFIX:M1:PLC:fHomePosition_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ao, "$PREFIX:M1:PLC:fHomePosition") {
+record(ao, "$(PREFIX):M1:PLC:fHomePosition") {
   # Used internally and by the IOC to pick home position
   field(DESC, "Used internally and ...ick home position")
   field(DTYP, "asynFloat64")
@@ -242,7 +242,7 @@ record(ao, "$PREFIX:M1:PLC:fHomePosition") {
   info(archive, "VAL")
 }
 
-record(ai, "$PREFIX:M1:PLC:fPosDiff_RBV") {
+record(ai, "$(PREFIX):M1:PLC:fPosDiff_RBV") {
   field(DESC, "Position lag difference")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -255,7 +255,7 @@ record(ai, "$PREFIX:M1:PLC:fPosDiff_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M1:PLC:nEncoderCount_RBV") {
+record(longin, "$(PREFIX):M1:PLC:nEncoderCount_RBV") {
   field(DESC, "Count from encoder hardware")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -267,7 +267,7 @@ record(longin, "$PREFIX:M1:PLC:nEncoderCount_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M1:PLC:nErrorId_RBV") {
+record(longin, "$(PREFIX):M1:PLC:nErrorId_RBV") {
   field(DESC, "Error code if nonzero")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -279,7 +279,7 @@ record(longin, "$PREFIX:M1:PLC:nErrorId_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M1:PLC:sErrorMessage_RBV") {
+record(waveform, "$(PREFIX):M1:PLC:sErrorMessage_RBV") {
   field(DESC, "Message to identify the error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -295,7 +295,7 @@ record(waveform, "$PREFIX:M1:PLC:sErrorMessage_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M1:PLC:AxisPar:PosLagEn_RBV") {
+record(longin, "$(PREFIX):M1:PLC:AxisPar:PosLagEn_RBV") {
   # TRUE if position lag monitor (also known as stall monitor) is enabled.
   field(DESC, "TRUE if position lag...itor) is enabled.")
   field(SCAN, "I/O Intr")
@@ -308,7 +308,7 @@ record(longin, "$PREFIX:M1:PLC:AxisPar:PosLagEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M1:PLC:AxisPar:SLimMaxEn_RBV") {
+record(longin, "$(PREFIX):M1:PLC:AxisPar:SLimMaxEn_RBV") {
   # TRUE if controller static maximum limit is enabled.
   field(DESC, "TRUE if controller s...limit is enabled.")
   field(SCAN, "I/O Intr")
@@ -321,7 +321,7 @@ record(longin, "$PREFIX:M1:PLC:AxisPar:SLimMaxEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M1:PLC:AxisPar:SLimMinEn_RBV") {
+record(longin, "$(PREFIX):M1:PLC:AxisPar:SLimMinEn_RBV") {
   # TRUE if controller static minimum limit is enabled.
   field(DESC, "TRUE if controller s...limit is enabled.")
   field(SCAN, "I/O Intr")
@@ -334,7 +334,7 @@ record(longin, "$PREFIX:M1:PLC:AxisPar:SLimMinEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M1:PLC:AxisPar:MaxAccel_RBV") {
+record(ai, "$(PREFIX):M1:PLC:AxisPar:MaxAccel_RBV") {
   # Maximum rate of increase in speed of the axis in EU/s^2.
   field(DESC, "Maximum rate of incr...e axis in EU/s^2.")
   field(SCAN, "I/O Intr")
@@ -348,7 +348,7 @@ record(ai, "$PREFIX:M1:PLC:AxisPar:MaxAccel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M1:PLC:AxisPar:PosLagVal_RBV") {
+record(ai, "$(PREFIX):M1:PLC:AxisPar:PosLagVal_RBV") {
   field(DESC, "Maximum magnitude of position lag in EU.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -361,7 +361,7 @@ record(ai, "$PREFIX:M1:PLC:AxisPar:PosLagVal_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M1:PLC:AxisPar:PosLagTime_RBV") {
+record(ai, "$(PREFIX):M1:PLC:AxisPar:PosLagTime_RBV") {
   # Maximum allowable duration outside of maximum position lag value in seconds.
   field(DESC, "Maximum allowable du...value in seconds.")
   field(SCAN, "I/O Intr")
@@ -375,7 +375,7 @@ record(ai, "$PREFIX:M1:PLC:AxisPar:PosLagTime_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M1:PLC:AxisPar:MaxDecel_RBV") {
+record(ai, "$(PREFIX):M1:PLC:AxisPar:MaxDecel_RBV") {
   # Maximum rate of decrease in speed of the axis in EU/s^2.
   field(DESC, "Maximum rate of decr...e axis in EU/s^2.")
   field(SCAN, "I/O Intr")
@@ -389,7 +389,7 @@ record(ai, "$PREFIX:M1:PLC:AxisPar:MaxDecel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M1:PLC:AxisPar:EncOffset_RBV") {
+record(ai, "$(PREFIX):M1:PLC:AxisPar:EncOffset_RBV") {
   field(DESC, "Encoder offset in EU.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -402,7 +402,7 @@ record(ai, "$PREFIX:M1:PLC:AxisPar:EncOffset_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M1:PLC:AxisPar:EncScaling_RBV") {
+record(ai, "$(PREFIX):M1:PLC:AxisPar:EncScaling_RBV") {
   # Encoder scaling numerator / denominator in EU/COUNT.
   field(DESC, "Encoder scaling nume...ator in EU/COUNT.")
   field(SCAN, "I/O Intr")
@@ -416,7 +416,7 @@ record(ai, "$PREFIX:M1:PLC:AxisPar:EncScaling_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M1:PLC:AxisPar:SLimMax_RBV") {
+record(ai, "$(PREFIX):M1:PLC:AxisPar:SLimMax_RBV") {
   # Maximum commandable position of the axis in EU.
   field(DESC, "Maximum commandable ...f the axis in EU.")
   field(SCAN, "I/O Intr")
@@ -430,7 +430,7 @@ record(ai, "$PREFIX:M1:PLC:AxisPar:SLimMax_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M1:PLC:AxisPar:SLimMin_RBV") {
+record(ai, "$(PREFIX):M1:PLC:AxisPar:SLimMin_RBV") {
   # Minimum commandable position of the axis in EU.
   field(DESC, "Minimum commandable ...f the axis in EU.")
   field(SCAN, "I/O Intr")
@@ -444,7 +444,7 @@ record(ai, "$PREFIX:M1:PLC:AxisPar:SLimMin_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M1:PLC:AxisPar:MaxVel_RBV") {
+record(ai, "$(PREFIX):M1:PLC:AxisPar:MaxVel_RBV") {
   # Maximum commandable speed of the axis in EU/s.
   field(DESC, "Maximum commandable ...the axis in EU/s.")
   field(SCAN, "I/O Intr")
@@ -458,7 +458,7 @@ record(ai, "$PREFIX:M1:PLC:AxisPar:MaxVel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M1:PLC:stEPSB:bEPS_OK_RBV") {
+record(bi, "$(PREFIX):M1:PLC:stEPSB:bEPS_OK_RBV") {
   field(DESC, "check if nFlags are all true")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -472,7 +472,7 @@ record(bi, "$PREFIX:M1:PLC:stEPSB:bEPS_OK_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M1:PLC:stEPSB:nFlags_RBV") {
+record(longin, "$(PREFIX):M1:PLC:stEPSB:nFlags_RBV") {
   field(DESC, "Contains EPS flags")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -484,7 +484,7 @@ record(longin, "$PREFIX:M1:PLC:stEPSB:nFlags_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M1:PLC:stEPSB:sFlagDesc_RBV") {
+record(waveform, "$(PREFIX):M1:PLC:stEPSB:sFlagDesc_RBV") {
   field(DESC, "semicolon-delimited nFlag variable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -500,7 +500,7 @@ record(waveform, "$PREFIX:M1:PLC:stEPSB:sFlagDesc_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M1:PLC:stEPSB:sMessage_RBV") {
+record(waveform, "$(PREFIX):M1:PLC:stEPSB:sMessage_RBV") {
   field(DESC, "Message from EPS to usr")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -516,7 +516,7 @@ record(waveform, "$PREFIX:M1:PLC:stEPSB:sMessage_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M1:PLC:stEPSF:bEPS_OK_RBV") {
+record(bi, "$(PREFIX):M1:PLC:stEPSF:bEPS_OK_RBV") {
   field(DESC, "check if nFlags are all true")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -530,7 +530,7 @@ record(bi, "$PREFIX:M1:PLC:stEPSF:bEPS_OK_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M1:PLC:stEPSF:nFlags_RBV") {
+record(longin, "$(PREFIX):M1:PLC:stEPSF:nFlags_RBV") {
   field(DESC, "Contains EPS flags")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -542,7 +542,7 @@ record(longin, "$PREFIX:M1:PLC:stEPSF:nFlags_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M1:PLC:stEPSF:sFlagDesc_RBV") {
+record(waveform, "$(PREFIX):M1:PLC:stEPSF:sFlagDesc_RBV") {
   field(DESC, "semicolon-delimited nFlag variable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -558,7 +558,7 @@ record(waveform, "$PREFIX:M1:PLC:stEPSF:sFlagDesc_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M1:PLC:stEPSF:sMessage_RBV") {
+record(waveform, "$(PREFIX):M1:PLC:stEPSF:sMessage_RBV") {
   field(DESC, "Message from EPS to usr")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -574,7 +574,7 @@ record(waveform, "$PREFIX:M1:PLC:stEPSF:sMessage_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M1:PLC:stEPSP:bEPS_OK_RBV") {
+record(bi, "$(PREFIX):M1:PLC:stEPSP:bEPS_OK_RBV") {
   field(DESC, "check if nFlags are all true")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -588,7 +588,7 @@ record(bi, "$PREFIX:M1:PLC:stEPSP:bEPS_OK_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M1:PLC:stEPSP:nFlags_RBV") {
+record(longin, "$(PREFIX):M1:PLC:stEPSP:nFlags_RBV") {
   field(DESC, "Contains EPS flags")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -600,7 +600,7 @@ record(longin, "$PREFIX:M1:PLC:stEPSP:nFlags_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M1:PLC:stEPSP:sFlagDesc_RBV") {
+record(waveform, "$(PREFIX):M1:PLC:stEPSP:sFlagDesc_RBV") {
   field(DESC, "semicolon-delimited nFlag variable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -616,7 +616,7 @@ record(waveform, "$PREFIX:M1:PLC:stEPSP:sFlagDesc_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M1:PLC:stEPSP:sMessage_RBV") {
+record(waveform, "$(PREFIX):M1:PLC:stEPSP:sMessage_RBV") {
   field(DESC, "Message from EPS to usr")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -632,7 +632,7 @@ record(waveform, "$PREFIX:M1:PLC:stEPSP:sMessage_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M2:PLC:bError_RBV") {
+record(bi, "$(PREFIX):M2:PLC:bError_RBV") {
   field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -646,7 +646,7 @@ record(bi, "$PREFIX:M2:PLC:bError_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M2:PLC:bHardwareEnable_RBV") {
+record(bi, "$(PREFIX):M2:PLC:bHardwareEnable_RBV") {
   field(DESC, "TRUE if STO not hit")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -660,7 +660,7 @@ record(bi, "$PREFIX:M2:PLC:bHardwareEnable_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M2:PLC:bHomeCmd_RBV") {
+record(bi, "$(PREFIX):M2:PLC:bHomeCmd_RBV") {
   field(DESC, "Start the homing routine")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -674,7 +674,7 @@ record(bi, "$PREFIX:M2:PLC:bHomeCmd_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bo, "$PREFIX:M2:PLC:bHomeCmd") {
+record(bo, "$(PREFIX):M2:PLC:bHomeCmd") {
   field(DESC, "Start the homing routine")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -685,7 +685,7 @@ record(bo, "$PREFIX:M2:PLC:bHomeCmd") {
   info(archive, "VAL")
 }
 
-record(bi, "$PREFIX:M2:PLC:bReset_RBV") {
+record(bi, "$(PREFIX):M2:PLC:bReset_RBV") {
   field(DESC, "Used internally to reset errors")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -699,7 +699,7 @@ record(bi, "$PREFIX:M2:PLC:bReset_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bo, "$PREFIX:M2:PLC:bReset") {
+record(bo, "$(PREFIX):M2:PLC:bReset") {
   field(DESC, "Used internally to reset errors")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -710,7 +710,7 @@ record(bo, "$PREFIX:M2:PLC:bReset") {
   info(archive, "VAL")
 }
 
-record(bi, "$PREFIX:M2:PLC:bUserEnable_RBV") {
+record(bi, "$(PREFIX):M2:PLC:bUserEnable_RBV") {
   # Used to disable power entirely for an axis
   field(DESC, "Used to disable powe...irely for an axis")
   field(SCAN, "I/O Intr")
@@ -725,7 +725,7 @@ record(bi, "$PREFIX:M2:PLC:bUserEnable_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bo, "$PREFIX:M2:PLC:bUserEnable") {
+record(bo, "$(PREFIX):M2:PLC:bUserEnable") {
   # Used to disable power entirely for an axis
   field(DESC, "Used to disable powe...irely for an axis")
   field(DTYP, "asynInt32")
@@ -737,7 +737,7 @@ record(bo, "$PREFIX:M2:PLC:bUserEnable") {
   info(archive, "VAL")
 }
 
-record(ai, "$PREFIX:M2:PLC:fHomePosition_RBV") {
+record(ai, "$(PREFIX):M2:PLC:fHomePosition_RBV") {
   # Used internally and by the IOC to pick home position
   field(DESC, "Used internally and ...ick home position")
   field(SCAN, "I/O Intr")
@@ -751,7 +751,7 @@ record(ai, "$PREFIX:M2:PLC:fHomePosition_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ao, "$PREFIX:M2:PLC:fHomePosition") {
+record(ao, "$(PREFIX):M2:PLC:fHomePosition") {
   # Used internally and by the IOC to pick home position
   field(DESC, "Used internally and ...ick home position")
   field(DTYP, "asynFloat64")
@@ -762,7 +762,7 @@ record(ao, "$PREFIX:M2:PLC:fHomePosition") {
   info(archive, "VAL")
 }
 
-record(ai, "$PREFIX:M2:PLC:fPosDiff_RBV") {
+record(ai, "$(PREFIX):M2:PLC:fPosDiff_RBV") {
   field(DESC, "Position lag difference")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -775,7 +775,7 @@ record(ai, "$PREFIX:M2:PLC:fPosDiff_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M2:PLC:nEncoderCount_RBV") {
+record(longin, "$(PREFIX):M2:PLC:nEncoderCount_RBV") {
   field(DESC, "Count from encoder hardware")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -787,7 +787,7 @@ record(longin, "$PREFIX:M2:PLC:nEncoderCount_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M2:PLC:nErrorId_RBV") {
+record(longin, "$(PREFIX):M2:PLC:nErrorId_RBV") {
   field(DESC, "Error code if nonzero")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -799,7 +799,7 @@ record(longin, "$PREFIX:M2:PLC:nErrorId_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M2:PLC:sErrorMessage_RBV") {
+record(waveform, "$(PREFIX):M2:PLC:sErrorMessage_RBV") {
   field(DESC, "Message to identify the error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -815,7 +815,7 @@ record(waveform, "$PREFIX:M2:PLC:sErrorMessage_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M2:PLC:AxisPar:PosLagEn_RBV") {
+record(longin, "$(PREFIX):M2:PLC:AxisPar:PosLagEn_RBV") {
   # TRUE if position lag monitor (also known as stall monitor) is enabled.
   field(DESC, "TRUE if position lag...itor) is enabled.")
   field(SCAN, "I/O Intr")
@@ -828,7 +828,7 @@ record(longin, "$PREFIX:M2:PLC:AxisPar:PosLagEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M2:PLC:AxisPar:SLimMaxEn_RBV") {
+record(longin, "$(PREFIX):M2:PLC:AxisPar:SLimMaxEn_RBV") {
   # TRUE if controller static maximum limit is enabled.
   field(DESC, "TRUE if controller s...limit is enabled.")
   field(SCAN, "I/O Intr")
@@ -841,7 +841,7 @@ record(longin, "$PREFIX:M2:PLC:AxisPar:SLimMaxEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M2:PLC:AxisPar:SLimMinEn_RBV") {
+record(longin, "$(PREFIX):M2:PLC:AxisPar:SLimMinEn_RBV") {
   # TRUE if controller static minimum limit is enabled.
   field(DESC, "TRUE if controller s...limit is enabled.")
   field(SCAN, "I/O Intr")
@@ -854,7 +854,7 @@ record(longin, "$PREFIX:M2:PLC:AxisPar:SLimMinEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M2:PLC:AxisPar:MaxAccel_RBV") {
+record(ai, "$(PREFIX):M2:PLC:AxisPar:MaxAccel_RBV") {
   # Maximum rate of increase in speed of the axis in EU/s^2.
   field(DESC, "Maximum rate of incr...e axis in EU/s^2.")
   field(SCAN, "I/O Intr")
@@ -868,7 +868,7 @@ record(ai, "$PREFIX:M2:PLC:AxisPar:MaxAccel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M2:PLC:AxisPar:PosLagVal_RBV") {
+record(ai, "$(PREFIX):M2:PLC:AxisPar:PosLagVal_RBV") {
   field(DESC, "Maximum magnitude of position lag in EU.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -881,7 +881,7 @@ record(ai, "$PREFIX:M2:PLC:AxisPar:PosLagVal_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M2:PLC:AxisPar:PosLagTime_RBV") {
+record(ai, "$(PREFIX):M2:PLC:AxisPar:PosLagTime_RBV") {
   # Maximum allowable duration outside of maximum position lag value in seconds.
   field(DESC, "Maximum allowable du...value in seconds.")
   field(SCAN, "I/O Intr")
@@ -895,7 +895,7 @@ record(ai, "$PREFIX:M2:PLC:AxisPar:PosLagTime_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M2:PLC:AxisPar:MaxDecel_RBV") {
+record(ai, "$(PREFIX):M2:PLC:AxisPar:MaxDecel_RBV") {
   # Maximum rate of decrease in speed of the axis in EU/s^2.
   field(DESC, "Maximum rate of decr...e axis in EU/s^2.")
   field(SCAN, "I/O Intr")
@@ -909,7 +909,7 @@ record(ai, "$PREFIX:M2:PLC:AxisPar:MaxDecel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M2:PLC:AxisPar:EncOffset_RBV") {
+record(ai, "$(PREFIX):M2:PLC:AxisPar:EncOffset_RBV") {
   field(DESC, "Encoder offset in EU.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -922,7 +922,7 @@ record(ai, "$PREFIX:M2:PLC:AxisPar:EncOffset_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M2:PLC:AxisPar:EncScaling_RBV") {
+record(ai, "$(PREFIX):M2:PLC:AxisPar:EncScaling_RBV") {
   # Encoder scaling numerator / denominator in EU/COUNT.
   field(DESC, "Encoder scaling nume...ator in EU/COUNT.")
   field(SCAN, "I/O Intr")
@@ -936,7 +936,7 @@ record(ai, "$PREFIX:M2:PLC:AxisPar:EncScaling_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M2:PLC:AxisPar:SLimMax_RBV") {
+record(ai, "$(PREFIX):M2:PLC:AxisPar:SLimMax_RBV") {
   # Maximum commandable position of the axis in EU.
   field(DESC, "Maximum commandable ...f the axis in EU.")
   field(SCAN, "I/O Intr")
@@ -950,7 +950,7 @@ record(ai, "$PREFIX:M2:PLC:AxisPar:SLimMax_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M2:PLC:AxisPar:SLimMin_RBV") {
+record(ai, "$(PREFIX):M2:PLC:AxisPar:SLimMin_RBV") {
   # Minimum commandable position of the axis in EU.
   field(DESC, "Minimum commandable ...f the axis in EU.")
   field(SCAN, "I/O Intr")
@@ -964,7 +964,7 @@ record(ai, "$PREFIX:M2:PLC:AxisPar:SLimMin_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:M2:PLC:AxisPar:MaxVel_RBV") {
+record(ai, "$(PREFIX):M2:PLC:AxisPar:MaxVel_RBV") {
   # Maximum commandable speed of the axis in EU/s.
   field(DESC, "Maximum commandable ...the axis in EU/s.")
   field(SCAN, "I/O Intr")
@@ -978,7 +978,7 @@ record(ai, "$PREFIX:M2:PLC:AxisPar:MaxVel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M2:PLC:stEPSB:bEPS_OK_RBV") {
+record(bi, "$(PREFIX):M2:PLC:stEPSB:bEPS_OK_RBV") {
   field(DESC, "check if nFlags are all true")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -992,7 +992,7 @@ record(bi, "$PREFIX:M2:PLC:stEPSB:bEPS_OK_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M2:PLC:stEPSB:nFlags_RBV") {
+record(longin, "$(PREFIX):M2:PLC:stEPSB:nFlags_RBV") {
   field(DESC, "Contains EPS flags")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1004,7 +1004,7 @@ record(longin, "$PREFIX:M2:PLC:stEPSB:nFlags_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M2:PLC:stEPSB:sFlagDesc_RBV") {
+record(waveform, "$(PREFIX):M2:PLC:stEPSB:sFlagDesc_RBV") {
   field(DESC, "semicolon-delimited nFlag variable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1020,7 +1020,7 @@ record(waveform, "$PREFIX:M2:PLC:stEPSB:sFlagDesc_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M2:PLC:stEPSB:sMessage_RBV") {
+record(waveform, "$(PREFIX):M2:PLC:stEPSB:sMessage_RBV") {
   field(DESC, "Message from EPS to usr")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1036,7 +1036,7 @@ record(waveform, "$PREFIX:M2:PLC:stEPSB:sMessage_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M2:PLC:stEPSF:bEPS_OK_RBV") {
+record(bi, "$(PREFIX):M2:PLC:stEPSF:bEPS_OK_RBV") {
   field(DESC, "check if nFlags are all true")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1050,7 +1050,7 @@ record(bi, "$PREFIX:M2:PLC:stEPSF:bEPS_OK_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M2:PLC:stEPSF:nFlags_RBV") {
+record(longin, "$(PREFIX):M2:PLC:stEPSF:nFlags_RBV") {
   field(DESC, "Contains EPS flags")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1062,7 +1062,7 @@ record(longin, "$PREFIX:M2:PLC:stEPSF:nFlags_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M2:PLC:stEPSF:sFlagDesc_RBV") {
+record(waveform, "$(PREFIX):M2:PLC:stEPSF:sFlagDesc_RBV") {
   field(DESC, "semicolon-delimited nFlag variable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1078,7 +1078,7 @@ record(waveform, "$PREFIX:M2:PLC:stEPSF:sFlagDesc_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M2:PLC:stEPSF:sMessage_RBV") {
+record(waveform, "$(PREFIX):M2:PLC:stEPSF:sMessage_RBV") {
   field(DESC, "Message from EPS to usr")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1094,7 +1094,7 @@ record(waveform, "$PREFIX:M2:PLC:stEPSF:sMessage_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:M2:PLC:stEPSP:bEPS_OK_RBV") {
+record(bi, "$(PREFIX):M2:PLC:stEPSP:bEPS_OK_RBV") {
   field(DESC, "check if nFlags are all true")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1108,7 +1108,7 @@ record(bi, "$PREFIX:M2:PLC:stEPSP:bEPS_OK_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:M2:PLC:stEPSP:nFlags_RBV") {
+record(longin, "$(PREFIX):M2:PLC:stEPSP:nFlags_RBV") {
   field(DESC, "Contains EPS flags")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1120,7 +1120,7 @@ record(longin, "$PREFIX:M2:PLC:stEPSP:nFlags_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M2:PLC:stEPSP:sFlagDesc_RBV") {
+record(waveform, "$(PREFIX):M2:PLC:stEPSP:sFlagDesc_RBV") {
   field(DESC, "semicolon-delimited nFlag variable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1136,7 +1136,7 @@ record(waveform, "$PREFIX:M2:PLC:stEPSP:sFlagDesc_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:M2:PLC:stEPSP:sMessage_RBV") {
+record(waveform, "$(PREFIX):M2:PLC:stEPSP:sMessage_RBV") {
   field(DESC, "Message from EPS to usr")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1152,7 +1152,7 @@ record(waveform, "$PREFIX:M2:PLC:stEPSP:sMessage_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:INCR:ARRAY_RBV") {
+record(waveform, "$(PREFIX):INCR:ARRAY_RBV") {
   field(DESC, "Main.stIncr.arrInt")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1168,7 +1168,7 @@ record(waveform, "$PREFIX:INCR:ARRAY_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "$PREFIX:INCR:BOOL_RBV") {
+record(bi, "$(PREFIX):INCR:BOOL_RBV") {
   field(DESC, "Main.stIncr.bBool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1182,7 +1182,7 @@ record(bi, "$PREFIX:INCR:BOOL_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:INCR:LREAL_RBV") {
+record(ai, "$(PREFIX):INCR:LREAL_RBV") {
   field(DESC, "Main.stIncr.fLreal")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1195,7 +1195,7 @@ record(ai, "$PREFIX:INCR:LREAL_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "$PREFIX:INCR:REAL_RBV") {
+record(ai, "$(PREFIX):INCR:REAL_RBV") {
   field(DESC, "Main.stIncr.fReal")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1208,7 +1208,7 @@ record(ai, "$PREFIX:INCR:REAL_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:INCR:BYTE_RBV") {
+record(longin, "$(PREFIX):INCR:BYTE_RBV") {
   field(DESC, "Main.stIncr.iByte")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1220,7 +1220,7 @@ record(longin, "$PREFIX:INCR:BYTE_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:INCR:DINT_RBV") {
+record(longin, "$(PREFIX):INCR:DINT_RBV") {
   field(DESC, "Main.stIncr.iDin")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1232,7 +1232,7 @@ record(longin, "$PREFIX:INCR:DINT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:INCR:DWORD_RBV") {
+record(longin, "$(PREFIX):INCR:DWORD_RBV") {
   field(DESC, "Main.stIncr.iDword")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1244,7 +1244,7 @@ record(longin, "$PREFIX:INCR:DWORD_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(mbbi, "$PREFIX:INCR:ENUM_RBV") {
+record(mbbi, "$(PREFIX):INCR:ENUM_RBV") {
   field(DESC, "Main.stIncr.iEnum")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1272,7 +1272,7 @@ record(mbbi, "$PREFIX:INCR:ENUM_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:INCR:INT_RBV") {
+record(longin, "$(PREFIX):INCR:INT_RBV") {
   field(DESC, "Main.stIncr.iInt")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1284,7 +1284,7 @@ record(longin, "$PREFIX:INCR:INT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:INCR:SINT_RBV") {
+record(longin, "$(PREFIX):INCR:SINT_RBV") {
   field(DESC, "Main.stIncr.iSint")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1296,7 +1296,7 @@ record(longin, "$PREFIX:INCR:SINT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:INCR:UDINT_RBV") {
+record(longin, "$(PREFIX):INCR:UDINT_RBV") {
   field(DESC, "Main.stIncr.iUdint")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1308,7 +1308,7 @@ record(longin, "$PREFIX:INCR:UDINT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:INCR:UINT_RBV") {
+record(longin, "$(PREFIX):INCR:UINT_RBV") {
   field(DESC, "Main.stIncr.iUint")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1320,7 +1320,7 @@ record(longin, "$PREFIX:INCR:UINT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:INCR:USINT_RBV") {
+record(longin, "$(PREFIX):INCR:USINT_RBV") {
   field(DESC, "Main.stIncr.iUsint")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1332,7 +1332,7 @@ record(longin, "$PREFIX:INCR:USINT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "$PREFIX:INCR:WORD_RBV") {
+record(longin, "$(PREFIX):INCR:WORD_RBV") {
   field(DESC, "Main.stIncr.iWord")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1344,7 +1344,7 @@ record(longin, "$PREFIX:INCR:WORD_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:INCR:STRING_RBV") {
+record(waveform, "$(PREFIX):INCR:STRING_RBV") {
   field(DESC, "Main.stIncr.sString")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1360,7 +1360,7 @@ record(waveform, "$PREFIX:INCR:STRING_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:SET:ARRAY_RBV") {
+record(waveform, "$(PREFIX):SET:ARRAY_RBV") {
   field(DESC, "Main.stSet.arrInt")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1376,7 +1376,7 @@ record(waveform, "$PREFIX:SET:ARRAY_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:SET:ARRAY") {
+record(waveform, "$(PREFIX):SET:ARRAY") {
   field(DESC, "Main.stSet.arrInt")
   field(DTYP, "asynInt16ArrayOut")
   field(UDFS, "0")
@@ -1389,7 +1389,7 @@ record(waveform, "$PREFIX:SET:ARRAY") {
   info(archive, "VAL")
 }
 
-record(bi, "$PREFIX:SET:BOOL_RBV") {
+record(bi, "$(PREFIX):SET:BOOL_RBV") {
   field(DESC, "Main.stSet.bBool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1403,7 +1403,7 @@ record(bi, "$PREFIX:SET:BOOL_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bo, "$PREFIX:SET:BOOL") {
+record(bo, "$(PREFIX):SET:BOOL") {
   field(DESC, "Main.stSet.bBool")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -1414,7 +1414,7 @@ record(bo, "$PREFIX:SET:BOOL") {
   info(archive, "VAL")
 }
 
-record(ai, "$PREFIX:SET:LREAL_RBV") {
+record(ai, "$(PREFIX):SET:LREAL_RBV") {
   field(DESC, "Main.stSet.fLreal")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1427,7 +1427,7 @@ record(ai, "$PREFIX:SET:LREAL_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ao, "$PREFIX:SET:LREAL") {
+record(ao, "$(PREFIX):SET:LREAL") {
   field(DESC, "Main.stSet.fLreal")
   field(DTYP, "asynFloat64")
   field(UDFS, "0")
@@ -1437,7 +1437,7 @@ record(ao, "$PREFIX:SET:LREAL") {
   info(archive, "VAL")
 }
 
-record(ai, "$PREFIX:SET:REAL_RBV") {
+record(ai, "$(PREFIX):SET:REAL_RBV") {
   field(DESC, "Main.stSet.fReal")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1450,7 +1450,7 @@ record(ai, "$PREFIX:SET:REAL_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ao, "$PREFIX:SET:REAL") {
+record(ao, "$(PREFIX):SET:REAL") {
   field(DESC, "Main.stSet.fReal")
   field(DTYP, "asynFloat64")
   field(UDFS, "0")
@@ -1460,7 +1460,7 @@ record(ao, "$PREFIX:SET:REAL") {
   info(archive, "VAL")
 }
 
-record(longin, "$PREFIX:SET:BYTE_RBV") {
+record(longin, "$(PREFIX):SET:BYTE_RBV") {
   field(DESC, "Main.stSet.iByte")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1472,7 +1472,7 @@ record(longin, "$PREFIX:SET:BYTE_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longout, "$PREFIX:SET:BYTE") {
+record(longout, "$(PREFIX):SET:BYTE") {
   field(DESC, "Main.stSet.iByte")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -1481,7 +1481,7 @@ record(longout, "$PREFIX:SET:BYTE") {
   info(archive, "VAL")
 }
 
-record(longin, "$PREFIX:SET:DINT_RBV") {
+record(longin, "$(PREFIX):SET:DINT_RBV") {
   field(DESC, "Main.stSet.iDin")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1493,7 +1493,7 @@ record(longin, "$PREFIX:SET:DINT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longout, "$PREFIX:SET:DINT") {
+record(longout, "$(PREFIX):SET:DINT") {
   field(DESC, "Main.stSet.iDin")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -1502,7 +1502,7 @@ record(longout, "$PREFIX:SET:DINT") {
   info(archive, "VAL")
 }
 
-record(longin, "$PREFIX:SET:DWORD_RBV") {
+record(longin, "$(PREFIX):SET:DWORD_RBV") {
   field(DESC, "Main.stSet.iDword")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1514,7 +1514,7 @@ record(longin, "$PREFIX:SET:DWORD_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longout, "$PREFIX:SET:DWORD") {
+record(longout, "$(PREFIX):SET:DWORD") {
   field(DESC, "Main.stSet.iDword")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -1523,7 +1523,7 @@ record(longout, "$PREFIX:SET:DWORD") {
   info(archive, "VAL")
 }
 
-record(mbbi, "$PREFIX:SET:ENUM_RBV") {
+record(mbbi, "$(PREFIX):SET:ENUM_RBV") {
   field(DESC, "Main.stSet.iEnum")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1551,7 +1551,7 @@ record(mbbi, "$PREFIX:SET:ENUM_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(mbbo, "$PREFIX:SET:ENUM") {
+record(mbbo, "$(PREFIX):SET:ENUM") {
   field(DESC, "Main.stSet.iEnum")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -1576,7 +1576,7 @@ record(mbbo, "$PREFIX:SET:ENUM") {
   info(archive, "VAL")
 }
 
-record(longin, "$PREFIX:SET:INT_RBV") {
+record(longin, "$(PREFIX):SET:INT_RBV") {
   field(DESC, "Main.stSet.iInt")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1588,7 +1588,7 @@ record(longin, "$PREFIX:SET:INT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longout, "$PREFIX:SET:INT") {
+record(longout, "$(PREFIX):SET:INT") {
   field(DESC, "Main.stSet.iInt")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -1597,7 +1597,7 @@ record(longout, "$PREFIX:SET:INT") {
   info(archive, "VAL")
 }
 
-record(longin, "$PREFIX:SET:SINT_RBV") {
+record(longin, "$(PREFIX):SET:SINT_RBV") {
   field(DESC, "Main.stSet.iSint")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1609,7 +1609,7 @@ record(longin, "$PREFIX:SET:SINT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longout, "$PREFIX:SET:SINT") {
+record(longout, "$(PREFIX):SET:SINT") {
   field(DESC, "Main.stSet.iSint")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -1618,7 +1618,7 @@ record(longout, "$PREFIX:SET:SINT") {
   info(archive, "VAL")
 }
 
-record(longin, "$PREFIX:SET:UDINT_RBV") {
+record(longin, "$(PREFIX):SET:UDINT_RBV") {
   field(DESC, "Main.stSet.iUdint")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1630,7 +1630,7 @@ record(longin, "$PREFIX:SET:UDINT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longout, "$PREFIX:SET:UDINT") {
+record(longout, "$(PREFIX):SET:UDINT") {
   field(DESC, "Main.stSet.iUdint")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -1639,7 +1639,7 @@ record(longout, "$PREFIX:SET:UDINT") {
   info(archive, "VAL")
 }
 
-record(longin, "$PREFIX:SET:UINT_RBV") {
+record(longin, "$(PREFIX):SET:UINT_RBV") {
   field(DESC, "Main.stSet.iUint")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1651,7 +1651,7 @@ record(longin, "$PREFIX:SET:UINT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longout, "$PREFIX:SET:UINT") {
+record(longout, "$(PREFIX):SET:UINT") {
   field(DESC, "Main.stSet.iUint")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -1660,7 +1660,7 @@ record(longout, "$PREFIX:SET:UINT") {
   info(archive, "VAL")
 }
 
-record(longin, "$PREFIX:SET:USINT_RBV") {
+record(longin, "$(PREFIX):SET:USINT_RBV") {
   field(DESC, "Main.stSet.iUsint")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1672,7 +1672,7 @@ record(longin, "$PREFIX:SET:USINT_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longout, "$PREFIX:SET:USINT") {
+record(longout, "$(PREFIX):SET:USINT") {
   field(DESC, "Main.stSet.iUsint")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -1681,7 +1681,7 @@ record(longout, "$PREFIX:SET:USINT") {
   info(archive, "VAL")
 }
 
-record(longin, "$PREFIX:SET:WORD_RBV") {
+record(longin, "$(PREFIX):SET:WORD_RBV") {
   field(DESC, "Main.stSet.iWord")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1693,7 +1693,7 @@ record(longin, "$PREFIX:SET:WORD_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longout, "$PREFIX:SET:WORD") {
+record(longout, "$(PREFIX):SET:WORD") {
   field(DESC, "Main.stSet.iWord")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -1702,7 +1702,7 @@ record(longout, "$PREFIX:SET:WORD") {
   info(archive, "VAL")
 }
 
-record(waveform, "$PREFIX:SET:STRING_RBV") {
+record(waveform, "$(PREFIX):SET:STRING_RBV") {
   field(DESC, "Main.stSet.sString")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1718,7 +1718,7 @@ record(waveform, "$PREFIX:SET:STRING_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "$PREFIX:SET:STRING") {
+record(waveform, "$(PREFIX):SET:STRING") {
   field(DESC, "Main.stSet.sString")
   field(DTYP, "asynInt8ArrayOut")
   field(UDFS, "0")
