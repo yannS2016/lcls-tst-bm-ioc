@@ -2,14 +2,14 @@
 Test that we can move motors.
 """
 import pytest
-from pcdsdevices.epics_motor import BeckhoffAxis
+
+from .devices import AllPVs
 
 
-@pytest.mark.parametrize("suffix", ("M1", "M2"))
-def test_basic_motion(suffix: str):
-    mot = BeckhoffAxis(f"PLC:TST:IOC:{suffix}", name=suffix.lower())
-    mot.wait_for_connection()
+@pytest.mark.parametrize("mot", ("m1", "m2"))
+def test_basic_motion(all_pvs: AllPVs, mot: str):
+    mot = getattr(all_pvs, mot)
     mot.velocity.put(10)
     goal = mot.position + 4
-    mot.move(goal, wait=True)
+    mot.move(goal, wait=True, timeout=5.0)
     assert mot.position == pytest.approx(goal)
