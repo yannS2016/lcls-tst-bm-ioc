@@ -1,6 +1,8 @@
 """
 Test that we can write to the PLC and read back our writes.
 """
+import time
+
 import pytest
 
 from .devices import PytmcVars
@@ -26,6 +28,7 @@ def test_basic_puts(vars_set: PytmcVars, attrname: str):
     sig = getattr(vars_set, attrname)
     for putval in setpoints[attrname]:
         sig.put(putval)
+        time.sleep(2)
         if isinstance(putval, str):
             getval = sig.get(string=True)
         else:
