@@ -1,11 +1,11 @@
-#!/cds/home/z/zlentz/temp/ioc-common-ads-ioc_at_pr_105/bin/rhel7-x86_64/adsIoc
+#!/cds/home/z/zlentz/temp/ioc-common-ads-ioc_at_pr_105/bin/rhel9-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: TestIOC.tsproj
 #        PLC name: TestIOC (TestIOC Instance)
 # Generated using: pytmc 2.17.0
-# Project version: f9795a6
-#    Project hash: f9795a698a140b2b3e857cbe2b441e2872917f2c
+# Project version: 9ea321c
+#    Project hash: 9ea321c79b6bb1af39fc375aba8f550dd5426bf3
 #     PLC IP/host: 172.21.148.160
 #      PLC Net ID: 172.21.148.160.1.1
 # ** DEVELOPMENT MODE IOC **
@@ -45,7 +45,7 @@ epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
 epicsEnvSet("ADS_TIME_SOURCE",  "0")
 
 # Add a route to the PLC automatically:
-system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.148.160 ^172.*")
+system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.148.160 ^172.*$")
 
 # adsAsynPortDriverConfigure(portName, ipaddr, amsaddr, amsport,
 #    asynParamTableSize, priority, noAutoConnect, defaultSampleTimeMS,
@@ -147,7 +147,7 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TST:IOC,IDX=1,TASK_PORT=350")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:TST:IOC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TST:IOC,PROJECT=TestIOC.tsproj,HASH=f9795a6,VERSION=f9795a6,PYTMC=2.17.0,PLC_HOST=172.21.148.160")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TST:IOC,PROJECT=TestIOC.tsproj,HASH=9ea321c,VERSION=9ea321c,PYTMC=2.17.0,PLC_HOST=172.21.148.160")
 
 #   lcls-twincat-motion: * (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=lcls-twincat-motion,VERSION=*,VENDOR=SLAC")
