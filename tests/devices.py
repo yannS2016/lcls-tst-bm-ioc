@@ -26,7 +26,7 @@ class PytmcVars(Device):
     var_udint = FCpt(PytmcSignal, "{prefix}:UDINT", **cpt_kw)
     var_real = FCpt(PytmcSignal, "{prefix}:REAL", **cpt_kw)
     var_lreal = FCpt(PytmcSignal, "{prefix}:LREAL", **cpt_kw)
-    var_string = FCpt(PytmcSignal, "{prefix}:STRING", **cpt_kw)
+    var_string = FCpt(PytmcSignal, "{prefix}:STRING", string=True, **cpt_kw)
     var_array = FCpt(PytmcSignal, "{prefix}:ARRAY", **cpt_kw)
 
     def __init__(self, prefix: str, *, io: str, **kwargs):
