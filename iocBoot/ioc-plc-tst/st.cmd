@@ -1,11 +1,11 @@
-#!/cds/home/z/zlentz/github/ioc-common-ads-ioc/bin/rhel7-x86_64/adsIoc
+#!/cds/home/z/zlentz/github/ioc-common-ads-ioc/bin/rhel9-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: TestIOC.tsproj
 #        PLC name: TestIOC (TestIOC Instance)
 # Generated using: pytmc 2.17.0
-# Project version: 4c09c17
-#    Project hash: 4c09c179d753b1fb74b253beba9ba06d6b74dfeb
+# Project version: 920317a
+#    Project hash: 920317ada410993b025767911eccdd7c974e677e
 #     PLC IP/host: 172.21.148.160
 #      PLC Net ID: 172.21.148.160.1.1
 # ** DEVELOPMENT MODE IOC **
@@ -21,6 +21,8 @@
 #   Tc3_Module: * (Beckhoff Automation GmbH)
 #
 ################### AUTO-GENERATED DO NOT EDIT ###################
+# Run common startup commands for linux soft IOC's
+< $(IOC_COMMON)/All/pre_linux.cmd
 < envPaths
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
@@ -147,7 +149,7 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TST:IOC,IDX=1,TASK_PORT=350")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:TST:IOC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TST:IOC,PROJECT=TestIOC.tsproj,HASH=4c09c17,VERSION=4c09c17,PYTMC=2.17.0,PLC_HOST=172.21.148.160")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TST:IOC,PROJECT=TestIOC.tsproj,HASH=920317a,VERSION=920317a,PYTMC=2.17.0,PLC_HOST=172.21.148.160")
 
 #   lcls-twincat-motion: * (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=lcls-twincat-motion,VERSION=*,VENDOR=SLAC")
