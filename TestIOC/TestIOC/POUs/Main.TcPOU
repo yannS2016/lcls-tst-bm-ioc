@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
+  <POU Name="Main" Id="{72a901fa-9a97-4d81-8b01-730815a6ff9d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main
+VAR
+    {attribute 'pytmc' := 'pv: @(PREFIX)M1'}
+    M1: ST_MotionStage;
+    {attribute 'pytmc' := 'pv: @(PREFIX)M2'}
+    M2: ST_MotionStage;
+
+    fbMotion1: FB_MotionStageSim;
+    fbMotion2: FB_MotionStageSim;
+
+    {attribute 'pytmc' :='
+        pv: @(PREFIX)INCR
+        io: i
+    '}
+    stIncr: ST_PytmcTypes;
+    {attribute 'pytmc' :='
+        pv: @(PREFIX)SET
+        io: io
+    '}
+    stSet: ST_PytmcTypes;
+
+    timer: TON;
+    rand: DRAND;
+    idx: UINT;
+    mult: LREAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+fbMotion1(stMotionStage:=M1);
+fbMotion2(stMotionStage:=M2);
+
+timer(
+    IN:=NOT timer.Q,
+    PT:=T#2s,
+);
+
+IF timer.Q THEN
+    // Flip the boolean
+    stIncr.bBool := NOT stIncr.bBool;
+
+    // Increment the ints
+    stIncr.iByte := stIncr.iByte + 1;
+    stIncr.iSint := stIncr.iSint + 1;
+    stIncr.iUsint := stIncr.iUsint + 1;
+    stIncr.iWord := stIncr.iWord + 1;
+    stIncr.iInt := stIncr.iInt + 1;
+    stIncr.iUint := stIncr.iUint + 1;
+    stIncr.iDword := stIncr.iDword + 1;
+    stIncr.iDin := stIncr.iDin + 1;
+    stIncr.iUdint := stIncr.iUdint + 1;
+
+    // Multiply the floats randomly
+    rand(Seed:=42);
+    IF rand.Num < 0.5 THEN
+        mult := rand.Num + 0.5;
+    ELSE
+        mult := rand.Num * 2;
+    END_IF
+    IF stIncr.fReal = 0 THEN
+        stIncr.fReal := 1;
+    ELSE
+        stIncr.fReal := LREAL_TO_REAL(stIncr.fReal * mult);
+    END_IF
+    IF stIncr.fLreal = 0 THEN
+        stIncr.fLreal := 1;
+    ELSE
+        stIncr.fLreal := stIncr.fLreal * mult;
+    END_IF
+
+    // To the next enum
+    CASE stIncr.iEnum OF
+        ENUM_Test.zero : stIncr.iEnum := Enum_test.one;
+        ENUM_Test.one : stIncr.iEnum := Enum_test.two;
+        ENUM_Test.two : stIncr.iEnum := Enum_test.three;
+        ENUM_Test.three : stIncr.iEnum := Enum_test.four;
+        ENUM_Test.four : stIncr.iEnum := Enum_test.five;
+        ENUM_Test.five : stIncr.iEnum := Enum_test.six;
+        ENUM_Test.six : stIncr.iEnum := Enum_test.seven;
+        ENUM_Test.seven : stIncr.iEnum := Enum_test.zero;
+    END_CASE
+
+    // I guess we'll just do the letter a a lot
+    IF LEN(stIncr.sString) > 39 THEN
+        stIncr.sString := '';
+    ELSE
+        stIncr.sString := CONCAT(stIncr.sString, 'a');
+    END_IF
+
+    // Array, copy value to next and add one in first slot
+    FOR idx := 0 TO 98 DO
+        stIncr.arrInt[99 - idx] := stIncr.arrInt[98 - idx];
+    END_FOR
+    stIncr.arrInt[0] := stIncr.arrInt[0] + 1;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
