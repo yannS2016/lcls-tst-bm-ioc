@@ -1,11 +1,11 @@
-#!/cds/home/z/zlentz/github/ioc-common-ads-ioc/bin/rhel9-x86_64/adsIoc
+#!/cds/group/pcds/epics-dev/nlentz/ads-ioc-dev-directory/ioc-common-ads-ioc/bin/rhel9-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: TestIOC.tsproj
 #        PLC name: TestIOC (TestIOC Instance)
-# Generated using: pytmc 2.17.0
-# Project version: 920317a
-#    Project hash: 920317ada410993b025767911eccdd7c974e677e
+# Generated using: pytmc 2.19.1
+# Project version: f44b134
+#    Project hash: f44b134090e4b49b1cfcf7b390299a85dd7c9378
 #     PLC IP/host: 172.21.148.160
 #      PLC Net ID: 172.21.148.160.1.1
 # ** DEVELOPMENT MODE IOC **
@@ -27,7 +27,7 @@
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "zlentz" )
+epicsEnvSet("ENGINEER", "nlentz" )
 epicsEnvSet("LOCATION", "PLC:TST:IOC" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
@@ -40,7 +40,7 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.148.160")
 epicsEnvSet("AMSID",            "172.21.148.160.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "1224")
+epicsEnvSet("ADS_MAX_PARAMS",   "1236")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
@@ -74,17 +74,7 @@ system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.148.160 ^172.*$")
 #                         arrives in the EPICS client.
 adsAsynPortDriverConfigure("$(ASYN_PORT)", "$(IPADDR)", "$(AMSID)", "$(AMS_PORT)", "$(ADS_MAX_PARAMS)", 0, 0, "$(ADS_SAMPLE_MS)", "$(ADS_MAX_DELAY_MS)", "$(ADS_TIMEOUT_MS)", "$(ADS_TIME_SOURCE)")
 
-cd "$(ADS_IOC_TOP)/db"
-
-
-epicsEnvSet("MOTOR_PORT",     "PLC_ADS")
-epicsEnvSet("PREFIX",         "PLC:TST:IOC:")
-epicsEnvSet("NUMAXES",        "2")
-epicsEnvSet("MOVE_POLL_RATE", "200")
-epicsEnvSet("IDLE_POLL_RATE", "1000")
-
-EthercatMCCreateController("$(MOTOR_PORT)", "$(ASYN_PORT)", "$(NUMAXES)", "$(MOVE_POLL_RATE)", "$(IDLE_POLL_RATE)")
-
+## Asyn/ADS diagnostics configuration (always loaded)
 #define ASYN_TRACE_ERROR     0x0001
 #define ASYN_TRACEIO_DEVICE  0x0002
 #define ASYN_TRACEIO_FILTER  0x0004
@@ -110,9 +100,23 @@ asynSetTraceInfoMask("$(ASYN_PORT)", -1, 5)
 #define AMPLIFIER_ON_FLAG_WHEN_HOMING  2
 #define AMPLIFIER_ON_FLAG_USING_CNEN   4
 
+cd "$(ADS_IOC_TOP)/db"
+
+########## Motor Configuration Block ##########
+epicsEnvSet("MOTOR_PORT",     "PLC_ADS")
+epicsEnvSet("PREFIX",         "PLC:TST:IOC:")
+epicsEnvSet("NUMAXES",        "2")
+epicsEnvSet("MOVE_POLL_RATE", "200")
+epicsEnvSet("IDLE_POLL_RATE", "1000")
+
+
+# Create the EthercatMC controller for the legacy (ST_MotionStage) motors.
+EthercatMCCreateController("$(MOTOR_PORT)", "$(ASYN_PORT)", "$(NUMAXES)", "$(MOVE_POLL_RATE)", "$(IDLE_POLL_RATE)")
+
 epicsEnvSet("AXIS_NO",         "1")
 epicsEnvSet("MOTOR_PREFIX",    "")
 epicsEnvSet("MOTOR_NAME",      "$(PREFIX)M1")
+epicsEnvSet("MOTOR_ADS_PATH",  "Main.M1")
 epicsEnvSet("DESC",            "Main.M1 / Axis 1")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
@@ -120,6 +124,7 @@ epicsEnvSet("AXISCONFIG",      "")
 epicsEnvSet("ECAXISFIELDINIT", "")
 epicsEnvSet("AMPLIFIER_FLAGS", "")
 
+# Create an EthercatMC axis instance for each legacy (ST_MotionStage) motor.
 EthercatMCCreateAxis("$(MOTOR_PORT)", "$(AXIS_NO)", "$(AMPLIFIER_FLAGS)", "$(AXISCONFIG)")
 dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC), EGU=$(EGU) $(ECAXISFIELDINIT)")
 dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
@@ -128,6 +133,7 @@ dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(
 epicsEnvSet("AXIS_NO",         "2")
 epicsEnvSet("MOTOR_PREFIX",    "")
 epicsEnvSet("MOTOR_NAME",      "$(PREFIX)M2")
+epicsEnvSet("MOTOR_ADS_PATH",  "Main.M2")
 epicsEnvSet("DESC",            "Main.M2 / Axis 2")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
@@ -135,6 +141,7 @@ epicsEnvSet("AXISCONFIG",      "")
 epicsEnvSet("ECAXISFIELDINIT", "")
 epicsEnvSet("AMPLIFIER_FLAGS", "")
 
+# Create an EthercatMC axis instance for each legacy (ST_MotionStage) motor.
 EthercatMCCreateAxis("$(MOTOR_PORT)", "$(AXIS_NO)", "$(AMPLIFIER_FLAGS)", "$(AXISCONFIG)")
 dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC), EGU=$(EGU) $(ECAXISFIELDINIT)")
 dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
@@ -149,7 +156,7 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TST:IOC,IDX=1,TASK_PORT=350")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:TST:IOC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TST:IOC,PROJECT=TestIOC.tsproj,HASH=920317a,VERSION=920317a,PYTMC=2.17.0,PLC_HOST=172.21.148.160")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TST:IOC,PROJECT=TestIOC.tsproj,HASH=f44b134,VERSION=f44b134,PYTMC=2.19.1,PLC_HOST=172.21.148.160")
 
 #   lcls-twincat-motion: * (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=lcls-twincat-motion,VERSION=*,VENDOR=SLAC")
@@ -167,8 +174,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("TestIOC.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TST:IOC:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 224
-callbackSetQueueSize(2448)
+# Total records: 236
+callbackSetQueueSize(2472)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:TST:IOC:")

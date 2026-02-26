@@ -1,5 +1,5 @@
-#IOC_TOP = /cds/group/pcds/epics/ioc/common/ads-ioc/R0.8.0
-IOC_TOP = /cds/home/z/zlentz/github/ioc-common-ads-ioc
+#IOC_TOP = /cds/group/pcds/epics/ioc/common/ads-ioc/R1.0.2
+IOC_TOP = /cds/group/pcds/epics-dev/nlentz/ads-ioc-dev-directory/ioc-common-ads-ioc
 IOC_INSTANCE_PATH := $(shell pwd)
 
 # Set PRODUCTION_IOC to 1 to move from a testing to a production IOC:
