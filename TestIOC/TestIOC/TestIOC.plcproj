@@ -8,7 +8,7 @@
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>TestIOC</Name>
-    <ProgramVersion>3.1.4026.13</ProgramVersion>
+    <ProgramVersion>3.1.4026.17</ProgramVersion>
     <Application>{93c3153a-c79b-4125-8cc6-39af5fc176be}</Application>
     <TypeSystem>{d8213a5f-de32-438d-9228-5905d8643773}</TypeSystem>
     <Implicit_Task_Info>{beb3aa3e-9a08-4439-bdf8-6b37fc601cc0}</Implicit_Task_Info>
