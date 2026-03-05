@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
   <DUT Name="ST_PytmcTypes" Id="{b6b1762f-8c9f-44b3-8428-243d291b76e5}">
     <Declaration><![CDATA[TYPE ST_PytmcTypes :
 // From https://pcdshub.github.io/pytmc/v2.18.2/pragma_usage.html#data-and-record-types
@@ -23,7 +23,7 @@ STRUCT
     {attribute 'pytmc' := 'pv: DWORD'}
     iDword: DWORD;
     {attribute 'pytmc' := 'pv: DINT'}
-    iDin: DINT;
+    iDint: DINT;
     {attribute 'pytmc' := 'pv: UDINT'}
     iUdint: UDINT;
     {attribute 'pytmc' := 'pv: REAL'}
@@ -32,6 +32,8 @@ STRUCT
     fLreal: LREAL;
     {attribute 'pytmc' := 'pv: STRING'}
     sString: STRING;
+    {attribute 'pytmc' := 'pv: MAXSTRING'}
+    sMaxString: T_MaxString;
     {attribute 'pytmc' := 'pv: ARRAY'}
     arrInt: ARRAY[0..99] OF INT;
 END_STRUCT
