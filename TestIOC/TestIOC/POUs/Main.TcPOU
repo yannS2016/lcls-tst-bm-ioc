@@ -3,7 +3,7 @@
   <POU Name="Main" Id="{72a901fa-9a97-4d81-8b01-730815a6ff9d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR CONSTANT
-	nInArray : UINT := 1000;
+	nInArray : UINT := 250;
 	nMotAbsAxes : UINT := 30;
 END_VAR
 VAR
@@ -328,10 +328,10 @@ IF timer.Q THEN
 		END_IF
 		
 		// I guess we'll just do the letter b a lot
-		IF LEN(stIncr[nI].sString) > 254 THEN
-			stIncr[nI].sString := '';
+		IF LEN(stIncr[nI].sMaxString) > 254 THEN
+			stIncr[nI].sMaxString := '';
 		ELSE
-			stIncr[nI].sString := CONCAT(stIncr[nI].sString, 'b');
+			stIncr[nI].sMaxString := CONCAT(stIncr[nI].sMaxString, 'b');
 		END_IF
 	
 		// Array, copy value to next and add one in first slot
