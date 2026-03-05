@@ -201,12 +201,12 @@ VAR
         pv: @(PREFIX)INCR
         io: i
     '}
-    stIncr: ARRAY[1..nInArray] OF ST_PytmcTypes;
+    stIncr: ST_PytmcTypes;
     {attribute 'pytmc' :='
         pv: @(PREFIX)SET
         io: io
     '}
-    stSet: ARRAY[1..nInArray] OF ST_PytmcTypes;
+    stSet: ST_PytmcTypes;
 
     timer: TON := (PT := T#2S);
     rand: DRAND;
@@ -271,75 +271,73 @@ timer(
 );
 
 IF timer.Q THEN
-	FOR nI := 1 TO nInArray BY 1 DO
-		// Flip the boolean
-		stIncr[nI].bBool := NOT stIncr[nI].bBool;
+	// Flip the boolean
+	stIncr.bBool := NOT stIncr.bBool;
+
+	// Increment the ints
+	stIncr.iByte := stIncr.iByte + 1;
+	stIncr.iSint := stIncr.iSint + 1;
+	stIncr.iUsint := stIncr.iUsint + 1;
+	stIncr.iWord := stIncr.iWord + 1;
+	stIncr.iInt := stIncr.iInt + 1;
+	stIncr.iUint := stIncr.iUint + 1;
+	stIncr.iDword := stIncr.iDword + 1;
+	stIncr.iDint := stIncr.iDint + 1;
+	stIncr.iUdint := stIncr.iUdint + 1;
+
+	// Multiply the floats randomly
+	rand(Seed:=42);
+	IF rand.Num < 0.5 THEN
+		mult := rand.Num + 0.5;
+	ELSE
+		mult := rand.Num * 2;
+	END_IF
+	IF stIncr.fReal = 0 THEN
+		stIncr.fReal := 1;
+	ELSIF stIncr.fReal > 99999999.9999 THEN
+		stIncr.fReal := 1;
+	ELSE
+		stIncr.fReal := LREAL_TO_REAL(stIncr.fReal * mult);
+	END_IF
+	IF stIncr.fLreal = 0 THEN
+		stIncr.fLreal := 1;
+	ELSIF stIncr.fLreal > 99999999.9999 THEN
+		stIncr.fLreal := 1;
+	ELSE
+		stIncr.fLreal := stIncr.fLreal * mult;
+	END_IF
+
+	// To the next enum
+	CASE stIncr.iEnum OF
+		ENUM_Test.zero : stIncr.iEnum := Enum_test.one;
+		ENUM_Test.one : stIncr.iEnum := Enum_test.two;
+		ENUM_Test.two : stIncr.iEnum := Enum_test.three;
+		ENUM_Test.three : stIncr.iEnum := Enum_test.four;
+		ENUM_Test.four : stIncr.iEnum := Enum_test.five;
+		ENUM_Test.five : stIncr.iEnum := Enum_test.six;
+		ENUM_Test.six : stIncr.iEnum := Enum_test.seven;
+		ENUM_Test.seven : stIncr.iEnum := Enum_test.zero;
+	END_CASE
+
+	// I guess we'll just do the letter a a lot
+	IF LEN(stIncr.sString) > 39 THEN
+		stIncr.sString := '';
+	ELSE
+		stIncr.sString := CONCAT(stIncr.sString, 'a');
+	END_IF
 	
-		// Increment the ints
-		stIncr[nI].iByte := stIncr[nI].iByte + 1;
-		stIncr[nI].iSint := stIncr[nI].iSint + 1;
-		stIncr[nI].iUsint := stIncr[nI].iUsint + 1;
-		stIncr[nI].iWord := stIncr[nI].iWord + 1;
-		stIncr[nI].iInt := stIncr[nI].iInt + 1;
-		stIncr[nI].iUint := stIncr[nI].iUint + 1;
-		stIncr[nI].iDword := stIncr[nI].iDword + 1;
-		stIncr[nI].iDint := stIncr[nI].iDint + 1;
-		stIncr[nI].iUdint := stIncr[nI].iUdint + 1;
-	
-		// Multiply the floats randomly
-		rand(Seed:=42);
-		IF rand.Num < 0.5 THEN
-			mult := rand.Num + 0.5;
-		ELSE
-			mult := rand.Num * 2;
-		END_IF
-		IF stIncr[nI].fReal = 0 THEN
-			stIncr[nI].fReal := 1;
-		ELSIF stIncr[nI].fReal > 99999999.9999 THEN
-			stIncr[nI].fReal := 1;
-		ELSE
-			stIncr[nI].fReal := LREAL_TO_REAL(stIncr[nI].fReal * mult);
-		END_IF
-		IF stIncr[nI].fLreal = 0 THEN
-			stIncr[nI].fLreal := 1;
-		ELSIF stIncr[nI].fLreal > 99999999.9999 THEN
-			stIncr[nI].fLreal := 1;
-		ELSE
-			stIncr[nI].fLreal := stIncr[nI].fLreal * mult;
-		END_IF
-	
-		// To the next enum
-		CASE stIncr[nI].iEnum OF
-			ENUM_Test.zero : stIncr[nI].iEnum := Enum_test.one;
-			ENUM_Test.one : stIncr[nI].iEnum := Enum_test.two;
-			ENUM_Test.two : stIncr[nI].iEnum := Enum_test.three;
-			ENUM_Test.three : stIncr[nI].iEnum := Enum_test.four;
-			ENUM_Test.four : stIncr[nI].iEnum := Enum_test.five;
-			ENUM_Test.five : stIncr[nI].iEnum := Enum_test.six;
-			ENUM_Test.six : stIncr[nI].iEnum := Enum_test.seven;
-			ENUM_Test.seven : stIncr[nI].iEnum := Enum_test.zero;
-		END_CASE
-	
-		// I guess we'll just do the letter a a lot
-		IF LEN(stIncr[nI].sString) > 39 THEN
-			stIncr[nI].sString := '';
-		ELSE
-			stIncr[nI].sString := CONCAT(stIncr[nI].sString, 'a');
-		END_IF
-		
-		// I guess we'll just do the letter b a lot
-		IF LEN(stIncr[nI].sMaxString) > 254 THEN
-			stIncr[nI].sMaxString := '';
-		ELSE
-			stIncr[nI].sMaxString := CONCAT(stIncr[nI].sMaxString, 'b');
-		END_IF
-	
-		// Array, copy value to next and add one in first slot
-		FOR idx := 0 TO 98 DO
-			stIncr[nI].arrInt[99 - idx] := stIncr[nI].arrInt[98 - idx];
-		END_FOR
-		stIncr[nI].arrInt[0] := stIncr[nI].arrInt[0] + 1;
+	// I guess we'll just do the letter b a lot
+	IF LEN(stIncr.sMaxString) > 254 THEN
+		stIncr.sMaxString := '';
+	ELSE
+		stIncr.sMaxString := CONCAT(stIncr.sMaxString, 'b');
+	END_IF
+
+	// Array, copy value to next and add one in first slot
+	FOR idx := 0 TO 98 DO
+		stIncr.arrInt[99 - idx] := stIncr.arrInt[98 - idx];
 	END_FOR
+	stIncr.arrInt[0] := stIncr.arrInt[0] + 1;
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="Main">
@@ -348,9 +346,7 @@ END_IF]]></ST>
       <LineId Id="79" Count="0" />
       <LineId Id="91" Count="3" />
       <LineId Id="6" Count="2" />
-      <LineId Id="10" Count="2" />
-      <LineId Id="69" Count="0" />
-      <LineId Id="13" Count="3" />
+      <LineId Id="10" Count="6" />
       <LineId Id="71" Count="0" />
       <LineId Id="18" Count="17" />
       <LineId Id="80" Count="1" />
@@ -360,7 +356,6 @@ END_IF]]></ST>
       <LineId Id="85" Count="5" />
       <LineId Id="84" Count="0" />
       <LineId Id="63" Count="5" />
-      <LineId Id="70" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
