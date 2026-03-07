@@ -4,7 +4,7 @@
     <Declaration><![CDATA[PROGRAM Main
 VAR CONSTANT
 	nInArray : UINT := 250;
-	nMotAbsAxes : UINT := 30;
+	nMotAbsAxes : UINT := 2;
 END_VAR
 VAR
 	{attribute 'pytmc' := 'pv: @(PREFIX)M1'}
@@ -13,188 +13,20 @@ VAR
     {attribute 'pytmc' := 'pv: @(PREFIX)M2'}
 	{attribute 'TcNcAxis' := '.Axis := Axis 2'}
     M2: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M3'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 3'}
-    M3: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M4'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 4'}
-    M4: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M5'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 5'}
-    M5: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M6'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 6'}
-    M6: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M7'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 7'}
-    M7: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M8'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 8'}
-    M8: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M9'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 9'}
-    M9: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M10'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 10'}
-    M10: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M11'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 11'}
-    M11: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M12'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 12'}
-    M12: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M13'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 13'}
-    M13: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M14'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 14'}
-    M14: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M15'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 15'}
-    M15: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M16'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 16'}
-    M16: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M17'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 17'}
-    M17: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M18'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 18'}
-    M18: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M19'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 19'}
-    M19: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M20'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 20'}
-    M20: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M21'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 21'}
-    M21: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M22'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 22'}
-    M22: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M23'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 23'}
-    M23: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M24'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 24'}
-    M24: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M25'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 25'}
-    M25: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M26'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 26'}
-    M26: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M27'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 27'}
-    M27: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M28'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 28'}
-    M28: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M29'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 29'}
-    M29: ST_MotionStage;
-    {attribute 'pytmc' := 'pv: @(PREFIX)M30'}
-	{attribute 'TcNcAxis' := '.Axis := Axis 30'}
-    M30: ST_MotionStage;
 
     fbMotion01: FB_MotionStageSim;
     fbMotion02: FB_MotionStageSim;
-    fbMotion03: FB_MotionStageSim;
-    fbMotion04: FB_MotionStageSim;
-    fbMotion05: FB_MotionStageSim;
-    fbMotion06: FB_MotionStageSim;
-    fbMotion07: FB_MotionStageSim;
-    fbMotion08: FB_MotionStageSim;
-    fbMotion09: FB_MotionStageSim;
-    fbMotion10: FB_MotionStageSim;
-    fbMotion11: FB_MotionStageSim;
-    fbMotion12: FB_MotionStageSim;
-    fbMotion13: FB_MotionStageSim;
-    fbMotion14: FB_MotionStageSim;
-    fbMotion15: FB_MotionStageSim;
-    fbMotion16: FB_MotionStageSim;
-    fbMotion17: FB_MotionStageSim;
-    fbMotion18: FB_MotionStageSim;
-    fbMotion19: FB_MotionStageSim;
-    fbMotion20: FB_MotionStageSim;
-    fbMotion21: FB_MotionStageSim;
-    fbMotion22: FB_MotionStageSim;
-    fbMotion23: FB_MotionStageSim;
-    fbMotion24: FB_MotionStageSim;
-    fbMotion25: FB_MotionStageSim;
-    fbMotion26: FB_MotionStageSim;
-    fbMotion27: FB_MotionStageSim;
-    fbMotion28: FB_MotionStageSim;
-    fbMotion29: FB_MotionStageSim;
-    fbMotion30: FB_MotionStageSim;
 	
 	fbPersistentDataStorage : LCLS_Tc_DevAbs.FB_PersistentDataStorage;
 	{attribute 'TcNcAxis' := '
         [1]  := Axis 31;
-        [2]  := Axis 32;
-        [3]  := Axis 33;
-        [4]  := Axis 34;
-        [5]  := Axis 35;
-        [6]  := Axis 36;
-        [7]  := Axis 37;
-        [8]  := Axis 38;
-        [9]  := Axis 39;
-        [10] := Axis 40;
-        [11] := Axis 41;
-        [12] := Axis 42;
-        [13] := Axis 43;
-        [14] := Axis 44;
-        [15] := Axis 45;
-        [16] := Axis 46;
-        [17] := Axis 47;
-        [18] := Axis 48;
-        [19] := Axis 49;
-        [20] := Axis 50;
-        [21] := Axis 51;
-        [22] := Axis 52;
-        [23] := Axis 53;
-        [24] := Axis 54;
-        [25] := Axis 55;
-        [26] := Axis 56;
-        [27] := Axis 57;
-        [28] := Axis 58;
-        [29] := Axis 59;
-        [30] := Axis 60
+        [2]  := Axis 32
 	'}
 	aAxisRef : ARRAY[1..nMotAbsAxes] OF AXIS_REF;
 	{attribute 'pytmc' := 'pv: @(PREFIX)MOTABS'}
 	fbMotionArr: ARRAY[1..nMotAbsAxes] OF FB_MotionStageNC[
 		(AxisRef := aAxisRef[1],  iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_01'),
-		(AxisRef := aAxisRef[2],  iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_02'),
-		(AxisRef := aAxisRef[3],  iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_03'),
-		(AxisRef := aAxisRef[4],  iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_04'),
-		(AxisRef := aAxisRef[5],  iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_05'),
-		(AxisRef := aAxisRef[6],  iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_06'),
-		(AxisRef := aAxisRef[7],  iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_07'),
-		(AxisRef := aAxisRef[8],  iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_08'),
-		(AxisRef := aAxisRef[9],  iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_09'),
-		(AxisRef := aAxisRef[10], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_10'),
-		(AxisRef := aAxisRef[11], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_11'),
-		(AxisRef := aAxisRef[12], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_12'),
-		(AxisRef := aAxisRef[13], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_13'),
-		(AxisRef := aAxisRef[14], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_14'),
-		(AxisRef := aAxisRef[15], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_15'),
-		(AxisRef := aAxisRef[16], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_16'),
-		(AxisRef := aAxisRef[17], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_17'),
-		(AxisRef := aAxisRef[18], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_18'),
-		(AxisRef := aAxisRef[19], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_19'),
-		(AxisRef := aAxisRef[20], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_20'),
-		(AxisRef := aAxisRef[21], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_21'),
-		(AxisRef := aAxisRef[22], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_22'),
-		(AxisRef := aAxisRef[23], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_23'),
-		(AxisRef := aAxisRef[24], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_24'),
-		(AxisRef := aAxisRef[25], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_25'),
-		(AxisRef := aAxisRef[26], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_26'),
-		(AxisRef := aAxisRef[27], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_27'),
-		(AxisRef := aAxisRef[28], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_28'),
-		(AxisRef := aAxisRef[29], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_29'),
-		(AxisRef := aAxisRef[30], iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_30')
+		(AxisRef := aAxisRef[2],  iPersistentDataStorage := fbPersistentDataStorage, sName := 'Axis_02')
 	];
 
     {attribute 'pytmc' :='
@@ -218,49 +50,21 @@ VAR PERSISTENT
     {attribute 'pytmc' :='
         pv: @(PREFIX)PERS:PASS0
         io: io
-		autosave_pass1: VAL
+		autosave_pass0: VAL
     '}
-	stPersistentPass0: ARRAY[1..nInArray] OF LREAL;
+	afPersistentPass0: ARRAY[1..nInArray] OF LREAL;
     {attribute 'pytmc' :='
         pv: @(PREFIX)PERS:PASS1
         io: io
 		autosave_pass1: VAL
     '}
-	stPersistentPass1: ARRAY[1..nInArray] OF LREAL;
+	afPersistentPass1: ARRAY[1..nInArray] OF LREAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 fbMotion01(stMotionStage:=M1);
 fbMotion02(stMotionStage:=M2);
-fbMotion03(stMotionStage:=M3);
-fbMotion04(stMotionStage:=M4);
-fbMotion05(stMotionStage:=M5);
-fbMotion06(stMotionStage:=M6);
-fbMotion07(stMotionStage:=M7);
-fbMotion08(stMotionStage:=M8);
-fbMotion09(stMotionStage:=M9);
-fbMotion10(stMotionStage:=M10);
-fbMotion11(stMotionStage:=M11);
-fbMotion12(stMotionStage:=M12);
-fbMotion13(stMotionStage:=M13);
-fbMotion14(stMotionStage:=M14);
-fbMotion15(stMotionStage:=M15);
-fbMotion16(stMotionStage:=M16);
-fbMotion17(stMotionStage:=M17);
-fbMotion18(stMotionStage:=M18);
-fbMotion19(stMotionStage:=M19);
-fbMotion20(stMotionStage:=M20);
-fbMotion21(stMotionStage:=M21);
-fbMotion22(stMotionStage:=M22);
-fbMotion23(stMotionStage:=M23);
-fbMotion24(stMotionStage:=M24);
-fbMotion25(stMotionStage:=M25);
-fbMotion26(stMotionStage:=M26);
-fbMotion27(stMotionStage:=M27);
-fbMotion28(stMotionStage:=M28);
-fbMotion29(stMotionStage:=M29);
-fbMotion30(stMotionStage:=M30);
 
 FOR nI := 1 TO nMotAbsAxes BY 1 DO
 	fbMotionArr[nI]();
@@ -308,15 +112,15 @@ IF timer.Q THEN
 	END_IF
 
 	// To the next enum
-	CASE stIncr.iEnum OF
-		ENUM_Test.zero : stIncr.iEnum := Enum_test.one;
-		ENUM_Test.one : stIncr.iEnum := Enum_test.two;
-		ENUM_Test.two : stIncr.iEnum := Enum_test.three;
-		ENUM_Test.three : stIncr.iEnum := Enum_test.four;
-		ENUM_Test.four : stIncr.iEnum := Enum_test.five;
-		ENUM_Test.five : stIncr.iEnum := Enum_test.six;
-		ENUM_Test.six : stIncr.iEnum := Enum_test.seven;
-		ENUM_Test.seven : stIncr.iEnum := Enum_test.zero;
+	CASE stIncr.eEnum OF
+		ENUM_Test.zero : stIncr.eEnum := Enum_test.one;
+		ENUM_Test.one : stIncr.eEnum := Enum_test.two;
+		ENUM_Test.two : stIncr.eEnum := Enum_test.three;
+		ENUM_Test.three : stIncr.eEnum := Enum_test.four;
+		ENUM_Test.four : stIncr.eEnum := Enum_test.five;
+		ENUM_Test.five : stIncr.eEnum := Enum_test.six;
+		ENUM_Test.six : stIncr.eEnum := Enum_test.seven;
+		ENUM_Test.seven : stIncr.eEnum := Enum_test.zero;
 	END_CASE
 
 	// I guess we'll just do the letter a a lot
@@ -333,17 +137,12 @@ IF timer.Q THEN
 		stIncr.sMaxString := CONCAT(stIncr.sMaxString, 'b');
 	END_IF
 
-	// Array, copy value to next and add one in first slot
-	FOR idx := 0 TO 98 DO
-		stIncr.arrInt[99 - idx] := stIncr.arrInt[98 - idx];
-	END_FOR
-	stIncr.arrInt[0] := stIncr.arrInt[0] + 1;
+	F_UpdateArray(stIncr := stIncr);
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="Main">
       <LineId Id="3" Count="0" />
-      <LineId Id="95" Count="28" />
-      <LineId Id="79" Count="0" />
+      <LineId Id="95" Count="1" />
       <LineId Id="91" Count="3" />
       <LineId Id="6" Count="2" />
       <LineId Id="10" Count="6" />
@@ -355,7 +154,8 @@ END_IF]]></ST>
       <LineId Id="40" Count="22" />
       <LineId Id="85" Count="5" />
       <LineId Id="84" Count="0" />
-      <LineId Id="63" Count="5" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="68" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
