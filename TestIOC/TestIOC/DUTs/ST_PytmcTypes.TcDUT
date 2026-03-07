@@ -10,44 +10,30 @@ STRUCT
     arrBool: ARRAY[0..GVL.nPytmcTypesArrayLength] OF BOOL;
     {attribute 'pytmc' := 'pv: BYTE'}
     iByte: BYTE;
-    {attribute 'pytmc' := 'pv: ARRAYBYTE'}
-    arrByte: ARRAY[0..GVL.nPytmcTypesArrayLength] OF BYTE;
     {attribute 'pytmc' := 'pv: SINT'}
     iSint: SINT;
-    {attribute 'pytmc' := 'pv: ARRAYSINT'}
-    arrSint: ARRAY[0..GVL.nPytmcTypesArrayLength] OF SINT;
     {attribute 'pytmc' := 'pv: USINT'}
     iUsint: USINT;
-    {attribute 'pytmc' := 'pv: ARRAYUSINT'}
-    arrUsint: ARRAY[0..GVL.nPytmcTypesArrayLength] OF USINT;
     {attribute 'pytmc' := 'pv: WORD'}
     iWord: WORD;
-    {attribute 'pytmc' := 'pv: ARRAYWORD'}
-    arrWord: ARRAY[0..GVL.nPytmcTypesArrayLength] OF WORD;
     {attribute 'pytmc' := 'pv: INT'}
     iInt: INT;
     {attribute 'pytmc' := 'pv: ARRAYINT'}
     arrInt: ARRAY[0..GVL.nPytmcTypesArrayLength] OF INT;
     {attribute 'pytmc' := 'pv: UINT'}
     iUint: UINT;
-    {attribute 'pytmc' := 'pv: ARRAYUINT'}
-    arrUint: ARRAY[0..GVL.nPytmcTypesArrayLength] OF UINT;
     {attribute 'pytmc' := 'pv: ENUM'}
     eEnum: ENUM_Test;
     {attribute 'pytmc' := 'pv: ARRAYENUM'}
     arrUEnum: ARRAY[0..GVL.nPytmcTypesArrayLength] OF ENUM_Test;
     {attribute 'pytmc' := 'pv: DWORD'}
     iDword: DWORD;
-    {attribute 'pytmc' := 'pv: ARRAYDWORD'}
-    arrDword: ARRAY[0..GVL.nPytmcTypesArrayLength] OF DWORD;
     {attribute 'pytmc' := 'pv: DINT'}
     iDint: DINT;
     {attribute 'pytmc' := 'pv: ARRAYDINT'}
     arrDint: ARRAY[0..GVL.nPytmcTypesArrayLength] OF DINT;
     {attribute 'pytmc' := 'pv: UDINT'}
     iUdint: UDINT;
-    {attribute 'pytmc' := 'pv: ARRAYUDINT'}
-    arrUdint: ARRAY[0..GVL.nPytmcTypesArrayLength] OF UDINT;
     {attribute 'pytmc' := 'pv: REAL'}
     fReal: REAL;
     {attribute 'pytmc' := 'pv: ARRAYREAL'}
