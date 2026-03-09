@@ -122,6 +122,20 @@
     <PlaceholderReference Include="TcUnit">
       <DefaultResolution>TcUnit, * (www.tcunit.org)</DefaultResolution>
       <Namespace>TcUnit</Namespace>
+      <Parameters>
+        <Parameter ListName="GVL_PARAM_TCUNIT" xmlns="">
+          <Key>MAXNUMBEROFTESTSUITES</Key>
+          <Value>10</Value>
+        </Parameter>
+        <Parameter ListName="GVL_PARAM_TCUNIT" xmlns="">
+          <Key>MAXNUMBEROFTESTSFOREACHTESTSUITE</Key>
+          <Value>10</Value>
+        </Parameter>
+        <Parameter ListName="GVL_PARAM_TCUNIT" xmlns="">
+          <Key>MAXNUMBEROFASSERTSFOREACHTESTSUITE</Key>
+          <Value>10</Value>
+        </Parameter>
+      </Parameters>
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>

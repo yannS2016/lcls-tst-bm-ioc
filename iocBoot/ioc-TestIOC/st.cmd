@@ -38,7 +38,7 @@
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
 epicsEnvSet("ENGINEER", "" )
-epicsEnvSet("LOCATION", "PLC:TST:IOC" )
+epicsEnvSet("LOCATION", "PLC:TestIOC" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
 
@@ -114,7 +114,7 @@ cd "$(ADS_IOC_TOP)/db"
 
 ########## Motor Configuration Block ##########
 epicsEnvSet("MOTOR_PORT",     "PLC_ADS")
-epicsEnvSet("PREFIX",         "PLC:TST:IOC:")
+epicsEnvSet("PREFIX",         "PLC:TestIOC:")
 epicsEnvSet("NUMAXES",        "52")
 epicsEnvSet("MOVE_POLL_RATE", "200")
 epicsEnvSet("IDLE_POLL_RATE", "1000")
@@ -158,57 +158,57 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 
-dbLoadRecords("iocSoft.db", "IOC=PLC:TST:IOC")
-dbLoadRecords("save_restoreStatus.db", "P=PLC:TST:IOC:")
+dbLoadRecords("iocSoft.db", "IOC=PLC:TestIOC")
+dbLoadRecords("save_restoreStatus.db", "P=PLC:TestIOC:")
 dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 
 ## TwinCAT task, application, and project information databases ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TST:IOC,IDX=1,TASK_PORT=350")
-dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:TST:IOC")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TestIOC,IDX=1,TASK_PORT=350")
+dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:TestIOC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TST:IOC,PROJECT=TestIOC.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.19.1,PLC_HOST=172.21.148.160")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TestIOC,PROJECT=TestIOC.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.19.1,PLC_HOST=172.21.148.160")
 
 #   LCLS General: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=LCLS_General,VERSION=*,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=LCLS_General,VERSION=*,VENDOR=SLAC")
 #   LCLS Vacuum: * (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=LCLS_Vacuum,VERSION=*,VENDOR=SLAC - LCLS")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=LCLS_Vacuum,VERSION=*,VENDOR=SLAC - LCLS")
 #   lcls-twincat-common-components: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=lcls-twincat-common-components,VERSION=*,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=lcls-twincat-common-components,VERSION=*,VENDOR=SLAC")
 #   lcls-twincat-math: * (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=lcls-twincat-math,VERSION=*,VENDOR=SLAC - LCLS")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=lcls-twincat-math,VERSION=*,VENDOR=SLAC - LCLS")
 #   lcls-twincat-motion: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=lcls-twincat-motion,VERSION=*,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=lcls-twincat-motion,VERSION=*,VENDOR=SLAC")
 #   lcls-twincat-optics: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=lcls-twincat-optics,VERSION=*,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=lcls-twincat-optics,VERSION=*,VENDOR=SLAC")
 #   lcls-twincat-physics: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=lcls-twincat-physics,VERSION=*,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=lcls-twincat-physics,VERSION=*,VENDOR=SLAC")
 #   LCLS_MotionAbstraction: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=LCLS_MotionAbstraction,VERSION=*,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=LCLS_MotionAbstraction,VERSION=*,VENDOR=SLAC")
 #   LCLS_Tc_DevAbs: * (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=LCLS_Tc_DevAbs,VERSION=*,VENDOR=SLAC - LCLS")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=LCLS_Tc_DevAbs,VERSION=*,VENDOR=SLAC - LCLS")
 #   PMPS: * (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=PMPS,VERSION=*,VENDOR=SLAC - LCLS")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=PMPS,VERSION=*,VENDOR=SLAC - LCLS")
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_Standard: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=Tc2_Standard,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=Tc2_Standard,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_System: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=Tc2_System,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=Tc2_System,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 #   Tc3_Module: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=Tc3_Module,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=Tc3_Module,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 #   TcUnit: * (www.tcunit.org)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TST:IOC,DEPENDENCY=TcUnit,VERSION=*,VENDOR=www.tcunit.org")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TestIOC,DEPENDENCY=TcUnit,VERSION=*,VENDOR=www.tcunit.org")
 
 cd "$(IOC_TOP)"
 
 ## PLC Project Database files ##
-dbLoadRecords("TestIOC.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TST:IOC:,IOCNAME=$(IOC),IOC=$(IOC)")
+dbLoadRecords("TestIOC.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TestIOC:,IOCNAME=$(IOC),IOC=$(IOC)")
 
 # Total records: 26755
 callbackSetQueueSize(55510)
 
 # Autosave and archive settings:
-save_restoreSet_status_prefix("PLC:TST:IOC:")
+save_restoreSet_status_prefix("PLC:TestIOC:")
 save_restoreSet_IncompleteSetsOk(1)
 save_restoreSet_DatedBackupFiles(1)
 set_pass0_restoreFile("info_positions.sav")
